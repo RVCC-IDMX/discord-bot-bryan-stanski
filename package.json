@@ -1,0 +1,25 @@
+{
+  "name": "discord-bot-bryan-stanski",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RVCC-IDMX/discord-bot-bryan-stanski.git"
+  },
+  "keywords": [],
+  "author": "Bryan Stanski <bryan.with.a.wi@gmail.com> (https://github.com/bryan-stanski)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RVCC-IDMX/discord-bot-bryan-stanski/issues"
+  },
+  "homepage": "https://github.com/RVCC-IDMX/discord-bot-bryan-stanski#readme",
+  "devDependencies": {
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4"
+  }
+}
