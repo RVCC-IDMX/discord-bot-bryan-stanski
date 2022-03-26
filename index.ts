@@ -12,19 +12,27 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', (message) => {
-  if (message.content === 'ping') {
+  if (message.content.toLocaleLowerCase() === 'ping') {
     message.react('🏓').then(console.log).catch(console.error);
-    message.reply({
-      content: 'pong',
-    });
+    message
+      .reply({
+        content: 'pong',
+      })
+      .then(() => console.log(`Replied to message "${message.content}"`))
+      .catch(console.error);
   }
-  if (message.content === 'cowsay') {
+  if (message.content.toLocaleLowerCase() === 'cowsay') {
     let output: string = cowsay.say({ text: "I don't know my fruits" });
     console.log(output);
     message.react('🥦').then(console.log).catch(console.error);
-    message.reply({
-      content: `\`\`\`${cowsay.say({ text: "I don't know my fruits" })}\`\`\``,
-    });
+    message
+      .reply({
+        content: `\`\`\`${cowsay.say({
+          text: "I don't know my fruits",
+        })}\`\`\``,
+      })
+      .then(() => console.log(`Replied to message "${message.content}"`))
+      .catch(console.error);
   }
 });
 
