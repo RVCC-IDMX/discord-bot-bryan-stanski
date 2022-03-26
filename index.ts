@@ -1,5 +1,6 @@
 import DiscordJS, { Intents } from 'discord.js';
 import dotenv from 'dotenv';
+import * as cowsay from 'cowsay';
 dotenv.config();
 
 const client = new DiscordJS.Client({
@@ -14,6 +15,13 @@ client.on('messageCreate', (message) => {
   if (message.content === 'ping') {
     message.reply({
       content: 'pong',
+    });
+  }
+  if (message.content === 'cowsay') {
+    let output: string = cowsay.say({ text: "I don't know my fruits" });
+    console.log(output);
+    message.reply({
+      content: `\`\`\`${cowsay.say({ text: "I don't know my fruits" })}\`\`\``,
     });
   }
 });
