@@ -1,6 +1,7 @@
 import DiscordJS, { DiscordAPIError, Intents } from 'discord.js';
 import dotenv from 'dotenv';
 import cowsay from './utils/cowsay';
+import emojis from './utils/emojis';
 dotenv.config();
 
 const client = new DiscordJS.Client({
@@ -22,18 +23,10 @@ client.on('messageCreate', (message) => {
       .catch(console.error);
   }
 
-  /* Reaction Logic left here because I am unable to bring in
-     the emoji from cowsay.ts & use it in the react() method
-     after attempting for a few hours. I felt time was better
-     spent on the rest of the project */
-
   if (message.content.toLocaleLowerCase() === 'cowsay') {
     const output = cowsay();
-    if (output === "```Exceeded Discord's 2000 character limit```") {
-      message.react('🚫').then(console.log).catch(console.error);
-    } else {
-      message.react('🥦').then(console.log).catch(console.error);
-    }
+    const emoji = emojis();
+    message.react(emoji).then(console.log).catch(console.error);
     message
       .reply(output)
       .then(() => console.log(`Replied to message "${message.content}"`))

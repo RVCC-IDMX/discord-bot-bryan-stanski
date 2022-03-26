@@ -10,6 +10,8 @@ let opts: IOptions = {
   y: false, // Changes "cow" to look young/somewhat simple
 };
 
+export { opts };
+
 export default function () {
   let output: string = cowsay.say(opts);
   output = output.replace(/```/g, "'''");
