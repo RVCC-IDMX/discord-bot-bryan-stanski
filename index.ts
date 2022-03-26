@@ -13,6 +13,7 @@ client.on('ready', () => {
 
 client.on('messageCreate', (message) => {
   if (message.content === 'ping') {
+    message.react('🏓').then(console.log).catch(console.error);
     message.reply({
       content: 'pong',
     });
@@ -20,6 +21,7 @@ client.on('messageCreate', (message) => {
   if (message.content === 'cowsay') {
     let output: string = cowsay.say({ text: "I don't know my fruits" });
     console.log(output);
+    message.react('🥦').then(console.log).catch(console.error);
     message.reply({
       content: `\`\`\`${cowsay.say({ text: "I don't know my fruits" })}\`\`\``,
     });
