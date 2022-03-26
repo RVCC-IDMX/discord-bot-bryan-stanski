@@ -1,5 +1,6 @@
 import * as cowsay from 'cowsay';
 import { IOptions } from 'cowsay';
+import getRandomInt from './random';
 
 let opts: IOptions = {
   text: "I don't know my fruits",
