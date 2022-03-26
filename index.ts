@@ -1,17 +1,7 @@
 import DiscordJS, { DiscordAPIError, Intents } from 'discord.js';
 import dotenv from 'dotenv';
-import * as cowsay from 'cowsay';
-import { IOptions } from 'cowsay';
+import cowsay from './utils/cowsay';
 dotenv.config();
-
-let opts: IOptions = {
-  text: "I don't know my fruits",
-  e: '00', // Changes eyes
-  T: 'U', // Changes tongue
-  f: 'lamb2', // Changes "cow" to a different "cow". For example, if set to C3PO the cow will become C3PO
-  r: true, // Randomizes "cow"
-  y: false, // Changes "cow" to look young/somewhat simple
-};
 
 const client = new DiscordJS.Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
@@ -31,29 +21,23 @@ client.on('messageCreate', (message) => {
       .then(() => console.log(`Replied to message "${message.content}"`))
       .catch(console.error);
   }
+
+  /* Reaction Logic left here because I am unable to bring in
+     the emoji from cowsay.ts & use it in the react() method
+     after attempting for a few hours. I felt time was better
+     spent on the rest of the project */
+
   if (message.content.toLocaleLowerCase() === 'cowsay') {
-    let output: string = cowsay.say(opts);
-    output = output.replace(/```/g, "'''");
-    console.log(output);
-    if (output.length > 1996) {
+    const output = cowsay();
+    if (output === "```Exceeded Discord's 2000 character limit```") {
       message.react('🚫').then(console.log).catch(console.error);
-      message
-        .reply({ content: "Exceeded Discord's 2000 character limit" })
-        .then(() =>
-          console.log(
-            `Replied to message "${message.content}" with error message`
-          )
-        )
-        .catch(console.error);
     } else {
       message.react('🥦').then(console.log).catch(console.error);
-      message
-        .reply({
-          content: `\`\`\`${output}\`\`\``,
-        })
-        .then(() => console.log(`Replied to message "${message.content}"`))
-        .catch(console.error);
     }
+    message
+      .reply(output)
+      .then(() => console.log(`Replied to message "${message.content}"`))
+      .catch(console.error);
   }
 });
 
