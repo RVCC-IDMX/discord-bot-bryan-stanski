@@ -5,7 +5,7 @@ import quotes from './quotes.json';
 
 export default function (params: string) {
   let random = false;
-  let animal = 'default';
+  let animal = 'whale';
   if (params === 'true' || params === 'false') {
     random = params === 'true';
   } else {
