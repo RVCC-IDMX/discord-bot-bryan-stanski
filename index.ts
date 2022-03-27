@@ -4,6 +4,16 @@ import cowsay from './utils/cowsay';
 import emojis from './utils/emojis';
 dotenv.config();
 
+const CHANNELS = process.env.CHANNELS || null;
+
+if (!CHANNELS) {
+  console.error('CHANNELS is not defined');
+  process.exit(1);
+}
+
+const channels = CHANNELS.split(',');
+console.table(channels);
+
 const client = new DiscordJS.Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 });
@@ -13,6 +23,8 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', (message) => {
+  if (!channels.includes(message.channel.id)) return;
+
   const PREFIX = process.env.PREFIX || 'bs!';
   const toCheck = message.content;
   const checked = toCheck.startsWith(PREFIX);
