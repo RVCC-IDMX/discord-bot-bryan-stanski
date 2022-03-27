@@ -1,8 +1,7 @@
 import cowsay from './cowsay';
 
-export default function () {
+export default function (output: string) {
   let emoji: string = '🐄';
-  const output = cowsay();
   if (output === `\`\`\`Exceeded Discord's 2000 character limit\`\`\``) {
     emoji = '🚫';
   }

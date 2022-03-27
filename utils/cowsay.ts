@@ -32,5 +32,6 @@ in opts
   if (output.length > 1996) {
     output = "Exceeded Discord's 2000 character limit";
   }
+  console.log(output);
   return `\`\`\`${output}\`\`\``;
 }
