@@ -29,7 +29,9 @@ client.on('messageCreate', (message) => {
     .split(/ /);
   const newMessage = args.shift()!;
 
-  if (newMessage.toLocaleLowerCase() === 'ping') {
+  let params: string = args.pop() as string;
+
+  if (newMessage === 'ping') {
     message.react('🏓').then(console.log).catch(console.error);
     message
       .reply({
@@ -39,8 +41,14 @@ client.on('messageCreate', (message) => {
       .catch(console.error);
   }
 
-  if (newMessage.toLocaleLowerCase() === 'cowsay') {
-    const output = cowsay();
+  if (newMessage === 'cowsay') {
+    try {
+      cowsay(params);
+    } catch (error) {
+      console.log(error);
+      return;
+    }
+    const output = cowsay(params);
     const emoji = emojis(output);
     message.react(emoji).then(console.log).catch(console.error);
     message

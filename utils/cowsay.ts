@@ -3,7 +3,15 @@ import { IOptions } from 'cowsay';
 import getRandomInt from './random';
 import quotes from './quotes.json';
 
-export default function () {
+export default function (params: string) {
+  let random = false;
+  let animal = 'default';
+  if (params === 'true' || params === 'false') {
+    random = params === 'true';
+  } else {
+    animal = params;
+  }
+
   /*
 randomInt gets a random int from getRandomInt
 It uses that random number to find the object
@@ -22,8 +30,8 @@ in opts
     text: `${quoteMessage} - ${quoteAuthor}`,
     e: '00', // Changes eyes
     T: 'U', // Changes tongue
-    f: 'mona-lisa', // Changes "cow" to a different "cow". For example, if set to C3PO the cow will become C3PO
-    r: true, // Randomizes "cow"
+    f: animal, // Changes "cow" to a different "cow". For example, if set to C3PO the cow will become C3PO
+    r: random, // Randomizes "cow"
     y: false, // Changes "cow" to look young/somewhat simple
   };
 
