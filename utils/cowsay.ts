@@ -2,6 +2,7 @@ import * as cowsay from 'cowsay';
 import { IOptions } from 'cowsay';
 import getRandomInt from './random';
 import quotes from './quotes.json';
+import { OutputFileType } from 'typescript';
 
 export default function (params: string) {
   let random = false;
@@ -35,11 +36,16 @@ in opts
     y: false, // Changes "cow" to look young/somewhat simple
   };
 
-  let output: string = cowsay.say(opts);
-  output = output.replace(/```/g, "'''");
-  if (output.length > 1996) {
-    output = "Exceeded Discord's 2000 character limit";
+  try {
+    let output: string = cowsay.say(opts);
+    output = output.replace(/```/g, "'''");
+    if (output.length > 1996) {
+      output = "Exceeded Discord's 2000 character limit";
+    }
+    console.log(output);
+    return `\`\`\`${output}\`\`\``;
+  } catch (error) {
+    console.log(error);
+    return;
   }
-  console.log(output);
-  return `\`\`\`${output}\`\`\``;
 }
