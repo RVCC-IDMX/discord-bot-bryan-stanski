@@ -46,6 +46,8 @@ in opts
     return `\`\`\`${output}\`\`\``;
   } catch (error) {
     console.log(error);
-    return;
+    let output: string;
+    output = 'Cowsay does not exist';
+    return output;
   }
 }
