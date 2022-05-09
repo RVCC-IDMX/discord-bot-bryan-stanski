@@ -36,6 +36,7 @@ export default {
       return;
     }
     let cityData = response.data;
+    console.log(cityData);
 
     let temp = cityData.main.temp;
     temp = (1.8 * (temp - 273) + 32).toFixed(0);

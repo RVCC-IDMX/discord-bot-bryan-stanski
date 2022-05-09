@@ -1,0 +1,74 @@
+[
+  {
+    "category": "enhancement material",
+    "subcategory": "honing materials"
+  },
+  {
+    "category": "enhancement material",
+    "subcategory": "additional honing materials"
+  },
+  {
+    "category": "enhancement material",
+    "subcategory": "other materials"
+  },
+  {
+    "category": "trader",
+    "subcategory": "foraging rewards"
+  },
+  {
+    "category": "trader",
+    "subcategory": "logging loot"
+  },
+  {
+    "category": "trader",
+    "subcategory": "mining loot"
+  },
+  {
+    "category": "trader",
+    "subcategory": "hunting loot"
+  },
+  {
+    "category": "trader",
+    "subcategory": "fishing loot"
+  },
+  {
+    "category": "trader",
+    "subcategory": "excavating loot"
+  },
+  {
+    "category": "trader",
+    "subcategory": "other"
+  },
+  {
+    "category": "combat supplies",
+    "subcategory": "battle item - recovery"
+  },
+  {
+    "category": "combat supplies",
+    "subcategory": "battle item - offense"
+  },
+  {
+    "category": "combat supplies",
+    "subcategory": "battle item - utility"
+  },
+  {
+    "category": "combat supplies",
+    "subcategory": "battle item - buff"
+  },
+  {
+    "category": "mount",
+    "subcategory": "mount"
+  },
+  {
+    "category": "mount",
+    "subcategory": "mount chest"
+  },
+  {
+    "category": "pets",
+    "subcategory": "pets"
+  },
+  {
+    "category": "pets",
+    "subcategory": "pet chest"
+  }
+]
