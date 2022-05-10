@@ -18,7 +18,7 @@ You must use the prefix bs! followed by <command> <args> to run commands
 - bs! weather [args] => bot will give you today's weather conditions, the sunrise and sunset times for the city of your choosing (info will be provided in that city's timezone)
 - bs! laMarket [args] => bot will provide you with a list of items and their recent market price for North America East Server
 
-For the laMarket args you must type in a subcategory (just searching by main categories is unavailable at this time). Below you can find a table with each available subcategory and it's corrisponding category.
+For the laMarket args you must type in a subcategory (just searching by main categories is unavailable at this time). Below you can find a table with each available subcategory and it's corresponding category.
 
 | Category             | Subcategory                 |
 | -------------------- | --------------------------- |
