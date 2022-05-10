@@ -35,10 +35,12 @@ export default {
       console.log(nameThing);
 
       if (nameThing === true) {
-        const categoryIndex = obj.subcategory.indexOf(combinedArgs);
+        falseCount++;
+
+        let categoryIndex = obj.subcategory.indexOf(combinedArgs);
         console.log(categoryIndex);
-        const categoryLocation = categories[categoryIndex];
-        const mainCategory = categoryLocation.category;
+        let categoryLocation = categories[categoryIndex];
+        let mainCategory = categoryLocation.category;
 
         console.log(mainCategory);
 
@@ -116,6 +118,7 @@ export default {
         console.log(i);
 
         console.log(marketPageInt);
+        i = 0;
         marketData.forEach((element) => {
           if (i < 15 * marketPageInt && i < marketData.length) {
             let itemNumber = i + 1;
@@ -134,6 +137,7 @@ export default {
             '-',
             false
           );
+          falseCount++;
         }
 
         const filter = (reaction, user) => {

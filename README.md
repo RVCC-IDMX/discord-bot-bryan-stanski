@@ -20,6 +20,8 @@ You must use the prefix bs! followed by <command> <args> to run commands
 
 For the laMarket args you must type in a subcategory (just searching by main categories is unavailable at this time). Below you can find a table with each available subcategory and it's corresponding category.
 
+#### Currently the only functional category that I tested is the Honing Materials. While other subcategories in enhancement material MIGHT work, it also sends a error message reply with the correct message. Others are just not working at the moment
+
 | Category             | Subcategory                 |
 | -------------------- | --------------------------- |
 | Enhancement Material | Honing Materials            |
